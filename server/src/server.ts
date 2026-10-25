@@ -1,5 +1,4 @@
 import express, { type Express } from "express";
-import cookieParser from "cookie-parser";
 import cors, { type CorsOptions } from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
@@ -23,7 +22,6 @@ const corsOptions: CorsOptions = {
 };
 
 app.use(express.json());
-app.use(cookieParser());
 app.use(cors(corsOptions));
 app.use(helmet());
 // app.use(morgan("dev"));
