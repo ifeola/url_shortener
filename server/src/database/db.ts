@@ -19,3 +19,5 @@ process.on("SIGTERM", async () => {
 });
 
 const db = drizzle({ client: pool });
+
+export { pool, db };
