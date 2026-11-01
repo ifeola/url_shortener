@@ -1,5 +1,5 @@
 {
-  "id": "740a4bc5-0235-4da2-8fbf-0f2efaa6b4ce",
+  "id": "14e267c7-6458-4c46-b26c-e5945de010a2",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -254,12 +254,6 @@
           "primaryKey": false,
           "notNull": true,
           "default": false
-        },
-        "image": {
-          "name": "image",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
         },
         "created_at": {
           "name": "created_at",

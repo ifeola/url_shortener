@@ -1,6 +1,6 @@
 {
-  "id": "2aae2563-4975-480f-8909-b7e0af81389c",
-  "prevId": "740a4bc5-0235-4da2-8fbf-0f2efaa6b4ce",
+  "id": "11b963b2-7436-4f82-b38a-e92df42175a2",
+  "prevId": "14e267c7-6458-4c46-b26c-e5945de010a2",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -254,6 +254,12 @@
           "primaryKey": false,
           "notNull": true,
           "default": false
+        },
+        "image": {
+          "name": "image",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
         },
         "created_at": {
           "name": "created_at",

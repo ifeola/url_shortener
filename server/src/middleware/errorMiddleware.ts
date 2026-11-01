@@ -13,13 +13,10 @@ const errorMiddleware: ErrorRequestHandler = (
   next: NextFunction,
 ) => {
   const statusCode = err instanceof CustomError ? err.statusCode : 500;
-  res
-    .status(statusCode)
-    .json({
-      ok: false,
-      message: err.message || "Internal server error",
-      ...(err && { err }),
-    });
+  res.status(statusCode).json({
+    ok: false,
+    message: err.message || "Internal server error",
+  });
 };
 
 export default errorMiddleware;
