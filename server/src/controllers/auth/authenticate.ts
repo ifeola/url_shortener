@@ -17,4 +17,23 @@ const requireAuth: RequestHandler = async (
   next();
 };
 
-export default requireAuth;
+function forwardCookies(headers: Headers, res: Response) {
+  const cookies = headers.getSetCookie();
+  if (cookies.length) res.setHeader("Set-Cookie", cookies);
+}
+
+const register = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const data = await auth.api.signUpEmail({
+      body: req.body,
+      headers: fromNodeHeaders(req.headers),
+      returnHeaders: true,
+    });
+    forwardCookies(data.headers, res);
+    return res.status(201).json(data.response);
+  } catch (error) {
+    return next(error);
+  }
+};
+
+export { requireAuth, register };
